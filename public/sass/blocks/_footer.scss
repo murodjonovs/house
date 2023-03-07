@@ -1,0 +1,36 @@
+//begin footer
+.footer {
+    &__container {
+        padding: 1.5rem;
+        @include flexBetween();
+        border-top: 1px solid #EDEDED;
+        .logo {
+            display: block;
+            img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+    &__txt {
+        color: var(--main-color-black);
+        font-size: .75rem;
+    }
+    .novas {
+        display: block;
+        svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 900.98px) {
+  .footer {
+
+  }
+}
+
+//end footer

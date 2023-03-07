@@ -1,0 +1,164 @@
+//begin header
+.header {
+    background: #FFFFFF;
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: .85rem 0;
+    z-index: 99;
+    &__container {
+        @include flexBetween();
+    }
+    &__nav {
+        @include flexEnd();
+        gap: 1rem;
+    }
+    &__btns {
+        @include flexEnd();
+        gap: .5rem;
+    }
+    &__call {
+        @include flexStart();
+        color: var(--main-color-black);
+        svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        span {
+            font-size: 1.2rem;
+            margin-left: .5rem;
+        }
+    }
+    &__whatsapp {
+        background-color: var(--main-color-one);
+        padding: .4rem 1rem;
+        border-radius: 1rem;
+        @include flexCenter();
+        svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-right: .5rem;
+        }
+        span {
+            color: var(--main-color-white);
+        }
+    }
+    &__feedback {
+        @include flexCenter();
+        background-color: var(--main-color-grey);
+        border-radius: 5rem;
+        padding: .4rem 1rem;
+        svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        span {
+            color: var(--main-color-black);
+            margin-left: .25rem;
+        }
+        &:hover {
+            background-color: var(--main-color-one);
+            svg {
+                path {
+                    stroke: var(--main-color-white);
+                }
+            }
+            span {
+                color: var(--main-color-white);
+            }
+        }
+    }
+    .languages {
+        position: relative;
+        &__btn {
+            position: relative;
+            @include flexCenter();
+            border-radius: 50%;
+            background-color: var(--main-color-grey);
+            padding: .35rem;
+            transition: .3s all;
+            cursor: pointer;
+            img {
+                display: block;
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+            }
+            &:hover {
+                background-color: var(--main-color-one);
+            }
+        }
+        &__list {
+            position: absolute;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: .3s all;
+            padding-top: 1rem;
+            opacity: 0;
+            visibility: hidden;
+        }
+        &__container {
+            a {
+                margin-bottom: .5rem;
+                &:last-child {
+                    margin-bottom: 00px;
+                }
+            }
+        }
+        &:hover {
+            .languages {
+                &__list {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    &__btn {
+        position: relative;
+        background-color: var(--main-color-grey);
+        border: none;
+        border-radius: 50%;
+        padding: 0;
+        @include flexCenter();
+        width: 2rem;
+        height: 2rem;
+        transition: .3s all;
+        svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            path {
+                transition: .3s all;
+            }
+        }
+        &:hover {
+            background-color: var(--main-color-one);
+            svg {
+                path {
+                    stroke: var(--main-color-white);
+                }
+            }
+        }
+    }
+}
+
+.menu {
+
+}
+
+@media (max-width: 900.98px) {
+    .header {
+
+    }
+    .menu {
+
+    }
+}
+//end header

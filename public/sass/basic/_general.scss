@@ -1,0 +1,50 @@
+*, ::after, ::before {
+  box-sizing: border-box!important;
+}
+.general {
+    &__container {
+        padding: 0 17.5rem;
+    }
+    &__top {
+
+    }
+    &__title {
+        color: var(--main-color-one);
+        font-size: 3.2rem;
+        line-height: 3rem;
+        margin-bottom: 3rem;
+    }
+    &__subtitle {
+        color: #A3A3A3;
+        font-size: .75rem;
+        display: block;
+        margin-bottom: .5rem;
+    }
+    &-R {
+        font-family: "GolosText-R";
+    }
+    &-M {
+        font-family: "GolosText-M";
+    }
+    &-B {
+        font-family: "GolosText-B";
+    }
+    &-Bl {
+        font-family: "GolosText-Bl";
+    }
+    &-Db {
+        font-family: "GolosText-DB";
+    }
+}
+@media (max-width: 900.98px) {
+    .general {
+        &__container {
+            padding: 0 1.5rem;
+        }
+        &__top {
+
+        }
+        &__title {
+        }
+    }
+}

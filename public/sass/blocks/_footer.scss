@@ -1,12 +1,12 @@
 //begin footer
 .footer {
     &__container {
-        padding: 1.5rem;
+        padding: 1.5rem 0;
         @include flexBetween();
         border-top: 1px solid #EDEDED;
         .logo {
             display: block;
-            img {
+            svg {
                 display: block;
                 max-width: 100%;
                 height: auto;
@@ -29,7 +29,27 @@
 
 @media (max-width: 900.98px) {
   .footer {
-
+    &__container {
+        flex-wrap: wrap;
+        padding: 4rem 0;
+        border-top: none;
+        .logo {
+            order: 1;
+            width: 17.2rem;
+        }
+        p {
+            order: 3;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 4rem;
+            font-size: 1.4rem;
+            max-width: 70%;
+        }
+        .novas {
+            order: 2;
+            width: 9.5rem;
+        }
+    }
   }
 }
 

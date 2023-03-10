@@ -11,6 +11,17 @@
     &__container {
         @include flexBetween();
     }
+    .logo {
+        display: block;
+        height: auto;
+        width: 8.8rem;
+        svg {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+    }
     &__nav {
         @include flexEnd();
         gap: 1rem;
@@ -86,7 +97,7 @@
             img {
                 display: block;
                 width: 100%;
-                max-width: 100%;
+                max-width: 1.3rem;
                 height: auto;
             }
             &:hover {
@@ -132,7 +143,7 @@
         transition: .3s all;
         svg {
             display: block;
-            max-width: 100%;
+            max-width: 1.2rem;
             height: auto;
             path {
                 transition: .3s all;
@@ -155,7 +166,39 @@
 
 @media (max-width: 900.98px) {
     .header {
+        padding: 1.4rem 0;
+        .logo {
+            width: 12.5rem;
+        }
+        &__call {
+            display: none;
+        }
+        &__whatsapp {
+            display: none;
+        }
+        &__feedback {
+            display: none;
+        }
+        .languages {
+            &__btn {
+                width: 4rem;
+                height: 4rem;
+                img {
+                    max-width: 3rem;
+                }
+            }
+        }
+        &__btns {
+            gap: 1rem;
 
+        }
+        &__btn {
+            width: 4rem;
+            height: 4rem;
+            svg {
+                max-width: 2.4rem;
+            }
+        }
     }
     .menu {
 

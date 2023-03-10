@@ -58,6 +58,11 @@ $(window).on('load', function () {
         $('.menu__box .box').removeClass('active');
     })
 
+    $('.architect__btn').click(function (event) {
+        $(this).parent().toggleClass('active');
+        $(this).parent().find('.architect__info').slideToggle('250')
+    })
+
     const animItems = document.querySelectorAll(`.anima-blocks`)
     if (animItems.length > 0) {
         window.addEventListener(`scroll`, animOnScroll)

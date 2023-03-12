@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title></title>
+    <title>BUSINESS HOUSE - СДЕЛАЙТЕ МЕЧТУ РЕАЛЬНОСТЬЮ</title>
     <meta name="description" content="">
     <meta name="keywords" content=""/>
     <meta name="author" content="Novas"/>
@@ -26,8 +26,10 @@
             --main-color-black: #212121;
             --main-color-grey: #F2F2F2;
             --main-color-grey-2: #E6E6E6;
+            --main-color-grey-3: #A3A3A3;
             --main-color-one: #966C53;
             --main-color-two: #A67A60;
+            --main-color-three: #AA8169;
         }
     </style>
     @yield('style')
@@ -50,10 +52,10 @@
 <script src="/js/main.js"></script>
 
 @yield('script')
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 <script>
     ymaps.ready(function () {
-        var myMap = new ymaps.Map('map', {
+        var myMaps = new ymaps.Map('map', {
                 center: [41.229153, 69.218494],
                 zoom: 17,
                 controls: []
@@ -65,14 +67,13 @@
                 iconImageSize: [86, 86],
                 iconImageOffset: [-55, -58]
             })
-        myMap.geoObjects
+        myMaps.geoObjects
             .add(myPlacemark)
 
-        myMap.behaviors.disable('scrollZoom', 'drag')
+        myMaps.behaviors.disable('scrollZoom')
 
-        myMap.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
+        myMaps.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
     });
-
 </script>
 </body>
 </html>

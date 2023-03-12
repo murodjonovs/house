@@ -44,6 +44,8 @@ $(window).on('load', function () {
         }, 250)
     })
 
+
+
     $('.menu__cat').click(function (event) {
         event.preventDefault();
         $(this).parent().toggleClass('active')
@@ -51,11 +53,20 @@ $(window).on('load', function () {
     })
 
 
-    $('button.header__menu').click(function (event) {
+    $('button.header__btn').click(function (event) {
         event.preventDefault();
         $('.menu').slideToggle();
         $(this).toggleClass('active');
         $('.menu__box .box').removeClass('active');
+    });
+    $('.menu__list a').click(function (){
+        $('.menu').slideUp('200');
+        $(this).removeClass('active');
+    })
+
+    $('.architect__btn').click(function (event) {
+        $(this).parent().toggleClass('active');
+        $(this).parent().find('.architect__info').slideToggle('250')
     })
 
     const animItems = document.querySelectorAll(`.anima-blocks`)

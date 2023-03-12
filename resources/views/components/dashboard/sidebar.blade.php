@@ -24,9 +24,15 @@
             <ul class="metismenu list-unstyled mt-4" id="side-menu">
                 <li class="menu-title">Menu</li>
                 <li>
-                    <a href="/dashboard">
+                    <a href="{{ route('dashboard.projects.index') }}">
                         <i class="uil-star"></i>
-                        <span>Test</span>
+                        <span>Business House</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('dashboard.mainslider.index') }}">
+                        <i class="uil-star"></i>
+                        <span>Business House</span>
                     </a>
                 </li>
                 <li>
@@ -37,12 +43,6 @@
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
                         <li><a href="ecommerce-products.html">Products</a></li>
                         <li><a href="ecommerce-product-detail.html">Product Detail</a></li>
-                        <li><a href="ecommerce-orders.html">Orders</a></li>
-                        <li><a href="ecommerce-customers.html">Customers</a></li>
-                        <li><a href="ecommerce-cart.html">Cart</a></li>
-                        <li><a href="ecommerce-checkout.html">Checkout</a></li>
-                        <li><a href="ecommerce-shops.html">Shops</a></li>
-                        <li><a href="ecommerce-add-product.html">Add Product</a></li>
                     </ul>
                 </li>
             </ul>

@@ -9,6 +9,7 @@ trait FileTrait
 {
     public function photoSave($photo, $directory)
     {
+    
         $height = Image::make($photo)->height();
         $width = Image::make($photo)->width();
 
@@ -31,10 +32,18 @@ trait FileTrait
         return '/' . $directory . '/' . $videoName;
     }
 
-    public function fileDelete($model, $id, $col_name)
+    public function fileDelete($model, $id, $col_name, $path = null)
     {
-        if (is_file(public_path($model::find($id)->$col_name))){
-            unlink(public_path() . $model::find($id)->$col_name);
+
+        if(is_null($path)){
+            $model = 'App\Models\\'.$model;
+            if (is_file(public_path($model::find($id)->$col_name))){
+                unlink(public_path() . $model::find($id)->$col_name);
+            }
+        }else{
+            if (is_file(public_path($path))){
+                unlink(public_path() . $path);
+            }
         }
         return back();
     }

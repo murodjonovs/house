@@ -11,11 +11,9 @@ use App\Traits\UpdateTrait;
 
 class BaseController extends Controller
 {
-    use StoreTrait, UpdateTrait, DestroyTrait;
-    use FileTrait;
-
     public function __construct()
     {
         $this->middleware('auth');
     }
+
 }

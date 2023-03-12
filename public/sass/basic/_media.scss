@@ -86,6 +86,9 @@
     }
 }
 @media (max-width: 900.98px) {
+    [data-aos-delay] {
+        transition-delay: 0s!important;
+    }
   :root {
     font-size: 11px;
   }

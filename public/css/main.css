@@ -1866,6 +1866,7 @@ address {
         font-size: .8rem;
         margin-bottom: 0; }
   .wrapper .section__planing {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -2747,6 +2748,10 @@ address {
   .d__none {
     display: none; } }
 @media (max-width: 900.98px) {
+  [data-aos-delay] {
+    -webkit-transition-delay: 0s !important;
+            transition-delay: 0s !important; }
+
   :root {
     font-size: 11px; }
 

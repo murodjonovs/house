@@ -52,8 +52,8 @@
 <script src="/js/main.js"></script>
 
 @yield('script')
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
-<script defer >
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script>
     ymaps.ready(function () {
         var myMaps = new ymaps.Map('map', {
                 center: [41.229153, 69.218494],

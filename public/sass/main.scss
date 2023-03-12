@@ -1519,6 +1519,151 @@ address {
                 }
             }
         }
+        &__planing {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.68);
+            backdrop-filter: blur(15px);
+            z-index: 99;
+            .planing {
+                @include flexBetween();
+                height: 100vh;
+                padding-right: 7rem;
+                &__back {
+                    @include flexCenter();
+                    position: absolute;
+                    background-color: rgba(255, 255, 255, 0.05);
+                    border: 2px solid #FFFFFF;
+                    backdrop-filter: blur(5px);
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    border-radius: 50%;
+                    transition: .3s all;
+                    top: 6rem;
+                    left: 17.5rem;
+                    svg {
+                        display: block;
+                        width: 100%;
+                        max-width: 1.2rem;
+                        height: auto;
+                        path {
+                            transition: .3s all;
+                        }
+                    }
+                    &:hover {
+                        background-color: var(--main-color-white);
+                        svg {
+                            path {
+                                stroke: var(--main-color-one);
+                            }
+                        }
+                    }
+                }
+                &__flat {
+                    position: relative;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    background: rgba(255, 255, 255, 0.1);
+                    border: 1px dashed #6B6B6B;
+                    @include flexCenter();
+                    border-radius: 50%;
+                    color: var(--main-color-white);
+                    margin-bottom: 1rem;
+                    transition: .3s all;
+                    &:before {
+                        content: 'Этаж';
+                        font-family: "GolosText-M";
+                        color: var(--main-color-white);
+                        font-size: .75rem;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 1rem;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: .3s all;
+                    }
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    &:hover, &.active {
+                        background-color: var(--main-color-one);
+                        border-color: var(--main-color-one);
+                        &:before {
+                            left: 3rem;
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+                &__container {
+                    @include flexEnd();
+                    align-items: flex-start;
+                    gap: 2rem;
+                }
+                &__house {
+                    position: relative;
+                    width: 26.1rem;
+                    height: 24.9rem;
+                    img {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 2;
+                        width: 100%;
+                    }
+                    svg {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        z-index: 3;
+                        width: 100%;
+                        height: auto;
+                        transition: .3s all;
+                        transform: translate(-50%, -50%);
+                        path {
+                            position: relative;
+                            opacity: 0;
+                            cursor: pointer;
+                            fill: var(--main-color-white);
+                            animation: svgPulse 2s infinite linear;
+                            &:hover {
+                                fill: var(--main-color-one);
+                                animation: none;
+                                opacity: .5;
+                            }
+                        }
+                    }
+                }
+                &__box {
+                    position: relative;
+                    background-color: var(--main-color-white);
+                    border-radius: 1rem;
+                    border-bottom: 5px solid var(--main-color-one);
+                    padding: 1.5rem;
+                    min-width: 8.5rem;
+                    &-info {
+                        color: var(--main-color-grey-3);
+                        font-size: .8rem;
+                        margin-bottom: 1rem;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                        span {
+                            color: var(--main-color-black);
+                            font-size: 1.3rem;
+                            display: block;
+                            margin-bottom: .5rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

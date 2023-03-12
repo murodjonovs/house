@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="wrapper">
-        <section class="section__main">
+        <section class="section__main" id="showcase">
             <div class="main">
                 <div class="swiper-container main__slider">
                     <div class="swiper-wrapper">
@@ -79,7 +79,7 @@
         </section>
         <!-- /.section__main -->
 
-        <section class="section__about" >
+        <section class="section__about" id="about">
             <div class="general__container">
                 <div class="about" id="section__about">
                     <div class="about__info" data-aos="fade-right">
@@ -325,7 +325,7 @@
                     </li>
                 </ul>
                 <!-- /.about__list -->
-                <div class="about__developer">
+                <div class="about__developer" id="comerc">
                     <div class="developer" data-aos-delay="200" data-aos="fade-right">
                         <p class="general__subtitle general-R">О застройщике</p>
                         <!-- /.developer__subtitle -->
@@ -858,7 +858,7 @@
         </section>
         <!-- /.section__parking -->
 
-        <section class="section__choice">
+        <section class="section__choice" id="appart">
             <div class="general__container">
                 <form class="choice">
                     <div class="choice__content" data-aos-delay="300" data-aos="fade-right">

@@ -86,6 +86,9 @@
     }
 }
 @media (max-width: 900.98px) {
+    [data-aos-delay] {
+        transition-delay: 0s!important;
+    }
   :root {
     font-size: 11px;
   }
@@ -718,6 +721,49 @@
                         span {
                             font-size: 1.6rem;
                         }
+                    }
+                }
+            }
+            &__planing {
+                .general__container {
+                    padding: 0 4rem;
+                }
+                .planing {
+                    flex-direction: column-reverse;
+                    padding-right: 0;
+                    padding-top: 24rem;
+                    padding-bottom: 3rem;
+                    &__back {
+                        top: 9.2rem;
+                        left: 3rem;
+                        width: 4rem;
+                        height: 4rem;
+                        svg {
+                            max-width: 2.4rem;
+                        }
+                    }
+                    &__container {
+                        width: 100%;
+                    }
+                    &__house {
+                        width: 100%;
+                        height: 33rem;
+                    }
+                    &__flats {
+                        @include flexStart();
+                        max-width: 100%;
+                        overflow-x: auto;
+                        padding-bottom: 2rem;
+                    }
+                    &__flat {
+                        margin-bottom: 0;
+                        margin-right: 1rem;
+                        font-size: 1.4rem;
+                        min-width: 3rem;
+                        height: 3rem;
+                    }
+                    &__box {
+                        display: none;
                     }
                 }
             }

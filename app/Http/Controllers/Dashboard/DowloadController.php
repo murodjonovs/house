@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\SecondSlider;
-use App\Services\SliderService;
+use App\Models\Dowload;
+use App\Services\DowloadService;
 use Illuminate\Http\Request;
 
-class SecondSliderController extends Controller
+class DowloadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,17 +15,18 @@ class SecondSliderController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    private$sliderService;
-    public function __construct(SliderService $sliderService)
+    private$dowloadService;
+    public function __construct(DowloadService $dowloadService)
     {
         // parent::__construct();
-        $this->sliderService = $sliderService;
+        $this->dowloadService = $dowloadService;
     }
+
     public function index()
     {
-        $secondsliders = SecondSlider::orderBy('id', 'desc')->get();
-        return view('dashboard.secondsliders.index', [
-            'secondsliders'=> $secondsliders
+        $dowloads = Dowload::find(1);
+        return view('dashboard.dowload.index', [
+            'dowloads'=>$dowloads
         ]);
     }
 
@@ -47,7 +48,7 @@ class SecondSliderController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->sliderService->store($request);
+        return $this->dowloadService->store($request);
     }
 
     /**
@@ -81,7 +82,7 @@ class SecondSliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $this->sliderService->update($request, $id);
+        return $this->dowloadService->update($request, $id);
     }
 
     /**
@@ -92,6 +93,6 @@ class SecondSliderController extends Controller
      */
     public function destroy($id)
     {
-        return $this->sliderService->destroy($id);
+        return $this->dowloadService->destroy($id);
     }
 }

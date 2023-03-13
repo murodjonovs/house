@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Dowload extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'photo',
+        'name_uz',
+        'name_ru',
+        'name_kr',
+    ];
 }

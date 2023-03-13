@@ -30,21 +30,34 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('dashboard.mainslider.index') }}">
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-star"></i>
-                        <span>Business House</span>
+                        <span>Основной слайдер</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{ route('dashboard.mainslider.index') }}">Лист</a></li>
+                        <li><a href="{{ route('dashboard.mainslider.create') }}">Создать</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{{ route('dashboard.secondslider.index') }}">
+                        <i class="uil-star"></i>
+                        <span>Слайдеры</span>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <a href="{{ route('dashboard.dowload.index') }}">
                         <i class="uil-star"></i>
-                        <span>Dropdown</span>
+                        <span>Скачать</span>
                     </a>
-                    <ul class="sub-menu mm-collapse" aria-expanded="false">
-                        <li><a href="ecommerce-products.html">Products</a></li>
-                        <li><a href="ecommerce-product-detail.html">Product Detail</a></li>
-                    </ul>
                 </li>
+                <li>
+                    <a href="{{ route('dashboard.information.index') }}">
+                        <i class="uil-star"></i>
+                        <span>Информация</span>
+                    </a>
+                </li>
+                
             </ul>
         </div>
         <!-- Sidebar -->

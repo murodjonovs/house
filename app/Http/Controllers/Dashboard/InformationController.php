@@ -3,29 +3,21 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\SecondSlider;
-use App\Services\SliderService;
+use App\Models\Information;
 use Illuminate\Http\Request;
 
-class SecondSliderController extends Controller
+class InformationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    private$sliderService;
-    public function __construct(SliderService $sliderService)
-    {
-        // parent::__construct();
-        $this->sliderService = $sliderService;
-    }
     public function index()
     {
-        $secondsliders = SecondSlider::orderBy('id', 'desc')->get();
-        return view('dashboard.secondsliders.index', [
-            'secondsliders'=> $secondsliders
+        $information = Information::find(1);
+        return view('dashboard.information.index', [
+            'information'=>$information
         ]);
     }
 
@@ -47,7 +39,7 @@ class SecondSliderController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->sliderService->store($request);
+        //
     }
 
     /**
@@ -81,7 +73,8 @@ class SecondSliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $this->sliderService->update($request, $id);
+        Information::find($id)->update($request->all());
+        return back();
     }
 
     /**
@@ -92,6 +85,6 @@ class SecondSliderController extends Controller
      */
     public function destroy($id)
     {
-        return $this->sliderService->destroy($id);
+        //
     }
 }

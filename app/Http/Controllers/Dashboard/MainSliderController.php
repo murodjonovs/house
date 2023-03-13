@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\MainSlider;
+use App\Services\MainSliderService;
 use Illuminate\Http\Request;
 
 class MainSliderController extends Controller
@@ -12,9 +14,20 @@ class MainSliderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    private$mainsliderService;
+    public function __construct(MainSliderService $mainsliderService)
+    {
+        // parent::__construct();
+        $this->mainsliderService = $mainsliderService;
+    }
+
     public function index()
     {
-        //
+        $mainsliders = MainSlider::all();
+        return view('dashboard.mainslider.index', [
+            'mainsliders'=>$mainsliders
+        ]);
     }
 
     /**
@@ -24,7 +37,7 @@ class MainSliderController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.mainslider.create'); 
     }
 
     /**
@@ -35,7 +48,7 @@ class MainSliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $this->mainsliderService->store($request);
     }
 
     /**
@@ -57,7 +70,10 @@ class MainSliderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mainslider = MainSlider::find($id);
+        return view('dashboard.mainslider.edit', [
+            'mainslider'=>$mainslider
+        ]);
     }
 
     /**
@@ -69,7 +85,7 @@ class MainSliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $this->mainsliderService->update($request, $id);
     }
 
     /**
@@ -80,6 +96,6 @@ class MainSliderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $this->mainsliderService->destroy($id);
     }
 }

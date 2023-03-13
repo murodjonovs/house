@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-4">
                             <div class="mb-3">
-                                <label class="form-label">Название EN</label>
+                                <label class="form-label">Название Kr</label>
                                 <input class="form-control" type="text" name="name_kr" value="{{ $flat->name_kr }}">
                             </div>
                         </div>
@@ -64,7 +64,6 @@
                         <h5>Комнаты | <button class="btn btn-xs btn-success" onclick="add()" type="button">+</button></h5>
                         
                         <input type="hidden" id="id" @if ($flat->rooms != null) value="{{ count($flat->rooms)+1 }}" @else value="0" @endif>
-                       
                         <div class="row">
                             <div class="rooms">
                                 @if ($flat->rooms != null)

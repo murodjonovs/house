@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('dowloads', function (Blueprint $table) {
             $table->id();
+            $table->string('photo');
+            $table->string('name_uz');
+            $table->string('name_ru');
+            $table->string('name_kr');
             $table->timestamps();
         });
     }

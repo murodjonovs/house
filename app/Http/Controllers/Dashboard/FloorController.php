@@ -15,8 +15,8 @@ class FloorController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    private 
-    $floorService;
+    private
+        $floorService;
     public function __construct(FloorService $floorService)
     {
         parent::__construct();
@@ -26,7 +26,7 @@ class FloorController extends BaseController
     {
         $building = Building::with('floors')->find($building_id);
         return view('dashboard.floors.index', [
-            'building'=>$building
+            'building' => $building
         ]);
     }
 
@@ -72,7 +72,7 @@ class FloorController extends BaseController
     {
         $floor = Floor::with('flats')->find($id);
         return view('dashboard.floors.edit', [
-            'floor'=>$floor
+            'floor' => $floor
         ]);
     }
 

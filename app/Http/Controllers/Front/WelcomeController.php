@@ -1,31 +1,32 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Dowload;
+use App\Models\Information;
+use App\Models\MainSlider;
 use App\Models\SecondSlider;
-use App\Services\SliderService;
 use Illuminate\Http\Request;
 
-class SecondSliderController extends Controller
+class WelcomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    private$sliderService;
-    public function __construct(SliderService $sliderService)
-    {
-        // parent::__construct();
-        $this->sliderService = $sliderService;
-    }
     public function index()
     {
-        $secondsliders = SecondSlider::orderBy('id', 'desc')->get();
-        return view('dashboard.secondsliders.index', [
-            'secondsliders'=> $secondsliders
+        $mainsliders = MainSlider::all();
+        $secondslider = SecondSlider::all();
+        $dowload = Dowload::find(1);
+        $information = Information::find(1);
+        return view('welcome', [
+            'mainsliders'=>$mainsliders,
+            'dowload'=>$dowload,
+            'secondslider'=>$secondslider,
+            'information'=>$information,
         ]);
     }
 
@@ -47,7 +48,7 @@ class SecondSliderController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->sliderService->store($request);
+        //
     }
 
     /**
@@ -81,7 +82,7 @@ class SecondSliderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $this->sliderService->update($request, $id);
+        //
     }
 
     /**
@@ -92,6 +93,6 @@ class SecondSliderController extends Controller
      */
     public function destroy($id)
     {
-        return $this->sliderService->destroy($id);
+        //
     }
 }

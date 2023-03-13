@@ -3,11 +3,14 @@
 use App\Http\Controllers\Dashboard\BaseController;
 use App\Http\Controllers\Dashboard\BuildingController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\DowloadController;
 use App\Http\Controllers\Dashboard\FlatController;
 use App\Http\Controllers\Dashboard\FloorController;
+use App\Http\Controllers\Dashboard\InformationController;
 use App\Http\Controllers\Dashboard\MainSliderController;
 use App\Http\Controllers\Dashboard\ProjectController;
 use App\Http\Controllers\Dashboard\SecondSliderController;
+use App\Http\Controllers\Front\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +24,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomeController::class, 'index']);
 
 
 Route::prefix('dashboard')->group(function(){
@@ -32,7 +33,9 @@ Route::prefix('dashboard')->group(function(){
         Route::get('/', [DashboardController::class, 'index'])->name('index');
         Route::resource('/projects', ProjectController::class)->only('index', 'update');
         Route::resource('/mainslider', MainSliderController::class);
-        Route::resource('/secondslider', SecondSliderController::class);
+        Route::resource('/secondslider', SecondSliderController::class)->only('index', 'store', 'update', 'destroy');
+        Route::resource('/dowload', DowloadController::class);
+        Route::resource('/information', InformationController::class);
 
         Route::get('/buildings/{project_id}', [BuildingController::class, 'index'])->name('buildings.index');
         Route::get('/buildings/{building_id}/edit', [BuildingController::class, 'edit'])->name('buildings.edit');

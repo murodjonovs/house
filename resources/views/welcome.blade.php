@@ -1,11 +1,9 @@
 @extends('layouts.front.main')
-
 @section('style')
     <link rel="stylesheet" href="/css/swiper.min.css">
     <link rel="stylesheet" href="/css/fancybox.css">
 @endsection
 @section('content')
-    {{-- @dd($mainsliders); --}}
     <div class="preloader" style="display: none">
         <div class="preloader__logo">
             <svg width="176" height="46" viewBox="0 0 176 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +47,7 @@
                                         <div class="main__slider-title general__regular" data-swiper-parallax-y="-200"
                                             data-swiper-parallax-scale=".8">
                                             <h1 class="main__title general-Db">
-                                                {{ $mainslider->name_uz }}
+                                                {{ $mainslider['name_'.$lang] }}
                                             </h1>
                                             <!-- /.main__title -->
                                         </div>
@@ -68,11 +66,11 @@
                                             <!-- /.main__list -->
                                             <div class="main__content">
                                                 <a href="" class="content__link general-Db">
-                                                    Выбрать планировку
+                                                    {{__('asd.Выбрать планировку')}}
                                                 </a>
                                                 <!-- /.main__title -->
                                                 <a href="#section__about" class="content__link general-Db">
-                                                    О проекте
+                                                    {{__('asd.О проекте')}}
                                                 </a>
                                                 <!-- /.main__descr -->
                                             </div>
@@ -93,17 +91,16 @@
             <div class="general__container">
                 <div class="about" id="section__about">
                     <div class="about__info" data-aos="fade-right">
-                        <p class="general__subtitle general-R">ЖК Business House</p>
+                        <p class="general__subtitle general-R">{{__('asd.ЖК Business House')}}</p>
                         <!-- /.contact__subtitle -->
-                        <h2 class="general__title general-Db">О проекте</h2>
+                        <h2 class="general__title general-Db">{{__('asd.О проекте')}}</h2>
                         <!-- /.contact__title -->
-                        <div class="about__subtitle general-M">Business House - жилой комплекс, открывающий серию новых
-                            современных домов Business House по ул. Шарля ме Голля.</div>
+                        <div class="about__subtitle general-M">{{__('asd.Business House - жилой комплекс, открывающий серию новых современных домов Business House по ул. Шарля ме Голля.')}}</div>
                         <!-- /.about__subtitle -->
-                        <div class="about__txt general-R">Жилой комплекс обладает продуманными планировочными решениями, в
+                        <div class="about__txt general-R">{{__('asd.Жилой комплекс обладает продуманными планировочными решениями, в
                             которых предусмотрено множество преимуществ и удобств: мастер-спальни, гардеробные, прачечные.
                             Сделайте мечту реальностью - становитесь обладателями комфортных и уютных квартир в BUSINESS
-                            HOUSE</div>
+                            HOUSE')}}</div>
                         <!-- /.about__txt -->
                         <a href="{{$dowload->photo}}" download="{{$dowload->photo}}" class="about__download">
                             <span class="ico">
@@ -120,7 +117,7 @@
                             </span>
                             <!-- /.ico -->
                             <span class="box">
-                                <span class="box__title general-M">Скачать электронный буклет</span>
+                                <span class="box__title general-M">{{__('asd.Скачать электронный буклет')}}</span>
                                 <!-- /.general-M -->
                                 <span class="box__info general-M">
                                     {{$dowload->name_uz}}
@@ -194,11 +191,10 @@
                         <!-- /.icon -->
                         <h4 class="name general-M">
                             <span class="txt general-M">
-                                Идеальное расположение
+                                {{__('asd.Идеальное расположение')}}
                             </span>
                             <!-- /.txt -->
-                            ЖК расположен близ пересечения проспекта Амира Темура и улицы Салам Папалам, в элитном районе
-                            столицы
+                            {{__('asd.ЖК расположен близ пересечения проспекта Амира Темура и улицы Салам Папалам, в элитном районе столицы')}}
                         </h4>
                         <!-- /.name -->
                     </div>
@@ -210,7 +206,7 @@
                                 d="M8.9 5V16.2M8.9 5L14.5 7.8M8.9 5L4 7.8V19L8.9 16.2M8.9 16.2L14.5 19M14.5 7.8V19M14.5 7.8L19.4 5V16.2L14.5 19"
                                 stroke="#966C53" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <span class="general-M">Смотреть на карте</span>
+                        <span class="general-M">{{__('asd.Смотреть на карте')}}</span>
                     </a>
                     <!-- /.location__btn -->
                 </div>
@@ -221,7 +217,7 @@
                             <img src="/img/icons/1.gif" alt="ico-gif">
                         </div>
                         <!-- /.ico -->
-                        <div class="content"><span class="general-M">Стоимость</span>
+                        <div class="content"><span class="general-M">{{__('asd.Стоимость')}}</span>
                             <!-- /.general-M -->
                             <p class="general-M">от 450 000 C/м²</p>
                             <!-- /.general-M -->
@@ -233,9 +229,9 @@
                             <img src="/img/icons/2.gif" alt="ico-gif">
                         </div>
                         <!-- /.ico -->
-                        <div class="content"><span class="general-M">Класс</span>
+                        <div class="content"><span class="general-M">{{__('asd.Класс')}}</span>
                             <!-- /.general-M -->
-                            <p class="general-M">Комфорт +</p>
+                            <p class="general-M">{{__('asd.Комфорт')}} +</p>
                             <!-- /.general-M -->
                         </div>
                         <!-- /.content -->
@@ -245,7 +241,7 @@
                             <img src="/img/icons/3.gif" alt="ico-gif">
                         </div>
                         <!-- /.ico -->
-                        <div class="content"><span class="general-M">Срок строительства</span>
+                        <div class="content"><span class="general-M">{{__('asd.Срок строительства')}}</span>
                             <!-- /.general-M -->
                             <p class="general-M">4 кв. 2023г</p>
                             <!-- /.general-M -->
@@ -257,7 +253,7 @@
                             <img src="/img/icons/4.gif" alt="ico-gif">
                         </div>
                         <!-- /.ico -->
-                        <div class="content"><span class="general-M">Этажность</span>
+                        <div class="content"><span class="general-M">{{__('asd.Этажность')}}</span>
                             <!-- /.general-M -->
                             <p class="general-M">9, 15, 16, 17</p>
                             <!-- /.general-M -->
@@ -269,7 +265,7 @@
                             <img src="/img/icons/5.gif" alt="ico-gif">
                         </div>
                         <!-- /.ico -->
-                        <div class="content"><span class="general-M">Площадь квартир</span>
+                        <div class="content"><span class="general-M">{{__('asd.Площадь квартир')}}</span>
                             <!-- /.general-M -->
                             <p class="general-M">от 40 до 121 м²</p>
                             <!-- /.general-M -->
@@ -281,9 +277,9 @@
                             <img src="/img/icons/6.gif" alt="ico-gif">
                         </div>
                         <!-- /.ico -->
-                        <div class="content"><span class="general-M">Высота потолков</span>
+                        <div class="content"><span class="general-M">{{__('asd.Высота потолков')}}</span>
                             <!-- /.general-M -->
-                            <p class="general-M">3 метра</p>
+                            <p class="general-M">3 {{__('asd.метра')}}</p>
                             <!-- /.general-M -->
                         </div>
                         <!-- /.content -->
@@ -293,9 +289,9 @@
                             <img src="/img/icons/7.gif" alt="ico-gif">
                         </div>
                         <!-- /.ico -->
-                        <div class="content"><span class="general-M">Межквартирные стены</span>
+                        <div class="content"><span class="general-M">{{__('asd.Межквартирные стены')}}</span>
                             <!-- /.general-M -->
-                            <p class="general-M">Кирпич</p>
+                            <p class="general-M">{{__('asd.Кирпич')}}</p>
                             <!-- /.general-M -->
                         </div>
                         <!-- /.content -->
@@ -305,9 +301,9 @@
                             <img src="/img/icons/8.gif" alt="ico-gif">
                         </div>
                         <!-- /.ico -->
-                        <div class="content"><span class="general-M">Паркинг</span>
+                        <div class="content"><span class="general-M">{{__('asd.Паркинг')}}</span>
                             <!-- /.general-M -->
-                            <p class="general-M">Наземный крытый</p>
+                            <p class="general-M">{{__('asd.Наземный крытый')}}</p>
                             <!-- /.general-M -->
                         </div>
                         <!-- /.content -->
@@ -317,9 +313,9 @@
                             <img src="/img/icons/9.gif" alt="ico-gif">
                         </div>
                         <!-- /.ico -->
-                        <div class="content"><span class="general-M">Гардеробные</span>
+                        <div class="content"><span class="general-M">{{__('asd.Гардеробные')}}</span>
                             <!-- /.general-M -->
-                            <p class="general-M">Есть</p>
+                            <p class="general-M">{{__('asd.Есть')}}</p>
                             <!-- /.general-M -->
                         </div>
                         <!-- /.content -->
@@ -329,9 +325,9 @@
                             <img src="/img/icons/10.gif" alt="ico-gif">
                         </div>
                         <!-- /.ico -->
-                        <div class="content"><span class="general-M">Двор</span>
+                        <div class="content"><span class="general-M">{{__('asd.Двор')}}</span>
                             <!-- /.general-M -->
-                            <p class="general-M">Закрытый</p>
+                            <p class="general-M">{{__('asd.Закрытый')}}</p>
                             <!-- /.general-M -->
                         </div>
                         <!-- /.content -->
@@ -341,9 +337,9 @@
                             <img src="/img/icons/11.gif" alt="ico-gif">
                         </div>
                         <!-- /.ico -->
-                        <div class="content"><span class="general-M">Кладовые</span>
+                        <div class="content"><span class="general-M">{{__('asd.Кладовые')}}</span>
                             <!-- /.general-M -->
-                            <p class="general-M">Есть</p>
+                            <p class="general-M">{{__('asd.Есть')}}</p>
                             <!-- /.general-M -->
                         </div>
                         <!-- /.content -->
@@ -351,9 +347,9 @@
                     <li data-aos-delay="1200" data-aos="fade-up">
                         <div class="ico"><img src="/img/icons/12.gif" alt="ico-gif"></div>
                         <!-- /.ico -->
-                        <div class="content"><span class="general-M">Прачечные</span>
+                        <div class="content"><span class="general-M">{{__('asd.Прачечные')}}</span>
                             <!-- /.general-M -->
-                            <p class="general-M">Есть</p>
+                            <p class="general-M">{{__('asd.Есть')}}</p>
                             <!-- /.general-M -->
                         </div>
                         <!-- /.content -->
@@ -362,18 +358,18 @@
                 <!-- /.about__list -->
                 <div class="about__developer" id="comerc">
                     <div class="developer" data-aos-delay="200" data-aos="fade-right">
-                        <p class="general__subtitle general-R">О застройщике</p>
+                        <p class="general__subtitle general-R">{{__('asd.О застройщике')}}</p>
                         <!-- /.developer__subtitle -->
-                        <h2 class="general__title general-Db">Cтроим семейные ценности вместе</h2>
+                        <h2 class="general__title general-Db">{{__('asd.Cтроим семейные ценности вместе')}}</h2>
                         <!-- /.developer__title -->
-                        <div class="developer__txt general-R">Business House - строительная компания, занимающаяся
+                        <div class="developer__txt general-R">{{__('asd.Business House - строительная компания, занимающаяся
                             возведением и реализацией жилых комплексов в г. Ташкент с 2004 года. Мы гордимся высоким
                             качеством строительства, надежностью наших объектов и профессионализмом нашего коллектива. В
                             наших домах уже живут счастливые семьи, обретают первых друзей маленькие дети и расцветает
-                            культура добрососедства.</div>
+                            культура добрососедства.')}}</div>
                         <!-- /.general-R -->
-                        <div class="developer__txt general-R">Мы ставим перед собой амбициозные цели, разрабатываем
-                            уникальные проекты, которые наполнятся уютом домашнего очага и станут украшением любимого города
+                        <div class="developer__txt general-R">{{__('asd.Мы ставим перед собой амбициозные цели, разрабатываем
+                            уникальные проекты, которые наполнятся уютом домашнего очага и станут украшением любимого города')}}
                         </div>
                         <!-- /.general-R -->
                     </div>
@@ -382,19 +378,19 @@
                         <div class="developer__box" data-aos-delay="100" data-aos="fade-up">
                             <h4 class="general-B">{{$information->area}}</h4>
                             <!-- /.general-B -->
-                            <p class="general-Db">КВАДРАТНЫХ МЕТРОВ СДАННОЙ ЖИЛОЙ НЕДВИЖИМОСТИ</p>
+                            <p class="general-Db">{{__('asd.КВАДРАТНЫХ МЕТРОВ СДАННОЙ ЖИЛОЙ НЕДВИЖИМОСТИ')}}</p>
                         </div>
                         <!-- /.developer__box -->
                         <div class="developer__box" data-aos-delay="200" data-aos="fade-up">
                             <h4 class="general-B">{{$information->year}}</h4>
                             <!-- /.general-B -->
-                            <p class="general-Db">ЛЕТ В СФЕРЕ СТРОИТЕЛЬСТВА</p>
+                            <p class="general-Db">{{__('asd.ЛЕТ В СФЕРЕ СТРОИТЕЛЬСТВА')}}</p>
                         </div>
                         <!-- /.developer__box -->
                         <div class="developer__box" data-aos-delay="300" data-aos="fade-up">
                             <h4 class="general-B">{{$information->project_number}}</h4>
                             <!-- /.general-B -->
-                            <p class="general-Db">РЕАЛИЗОВАННЫХ, СТРОЯЩИХСЯ И ПЕРСПЕКТИВНЫХ ЖК</p>
+                            <p class="general-Db">{{__('asd.РЕАЛИЗОВАННЫХ, СТРОЯЩИХСЯ И ПЕРСПЕКТИВНЫХ ЖК')}}</p>
                         </div>
                         <!-- /.developer__box -->
                         <div class="developer__box" data-aos-delay="400" data-aos="fade-up">
@@ -431,15 +427,15 @@
 
         <section class="section__location">
             <div class="general__container">
-                <p class="general__subtitle general-R" data-aos-delay="200" data-aos="fade-right">Расположение</p>
+                <p class="general__subtitle general-R" data-aos-delay="200" data-aos="fade-right">{{__('asd.Расположение')}}</p>
                 <!-- /.contact__subtitle -->
-                <h2 class="general__title general-Db" data-aos-delay="300" data-aos="fade-right">Территория</h2>
+                <h2 class="general__title general-Db" data-aos-delay="300" data-aos="fade-right">{{__('asd.Территория')}}</h2>
                 <!-- /.contact__title -->
                 <div class="location__buttons">
                     <a href="/genplan" class="location__btn general-M" data-aos-delay="200"
-                        data-aos="fade-right">Генплан</a>
+                        data-aos="fade-right">{{__('asd.Генплан')}}</a>
                     <a href="" class="location__btn general-M" data-aos-delay="400"
-                        data-aos="fade-right">Показать на карте</a>
+                        data-aos="fade-right">{{__('asd.Показать на карте')}}</a>
                 </div>
                 <!-- /.location__buttons -->
                 <div class="genplan" data-aos-delay="200" data-aos="fade-up">
@@ -453,11 +449,11 @@
                             </a>
                         </svg>
                     </div>
-                    <a href="/genplan" class="genplan__link general-Db">Выбрать планировку</a>
+                    <a href="{{ route('projects.index') }}" class="genplan__link general-Db">{{__('asd.Выбрать планировку')}}</a>
                     <!-- /.genplan__link -->
                     <div class="genplan__popup" style="">
-                        <p class="genplan__popup-floor general-Db"><span id="floor"></span> Этаж</p>
-                        <p class="genplan__popup-flat general-M"><span id="flat"></span> квартир</p>
+                        <p class="genplan__popup-floor general-Db"><span id="floor"></span> {{__('asd.Этаж')}}</p>
+                        <p class="genplan__popup-flat general-M"><span id="flat"></span> {{__('asd.квартир')}}</p>
                     </div>
                 </div>
                 <!-- /.genplan -->
@@ -471,11 +467,10 @@
                 <div class="architect">
                     <div class="architect__column">
                         <div class="column">
-                            <p class="general__subtitle general-R" data-aos-delay="200" data-aos="fade-up">Архитектура
+                            <p class="general__subtitle general-R" data-aos-delay="200" data-aos="fade-up">{{__('asd.Архитектура')}}
                             </p>
                             <!-- /.contact__subtitle -->
-                            <h2 class="general__title general-Db" data-aos-delay="300" data-aos="fade-up">Материалы
-                                </br>строительства</h2>
+                            <h2 class="general__title general-Db" data-aos-delay="300" data-aos="fade-up">{{__('asd.Материалы строительства')}}</h2>
                             <!-- /.contact__title -->
                         </div>
                         <!-- /.column -->
@@ -496,15 +491,13 @@
                                 </svg>
                             </div>
                             <!-- /.architect__btn -->
-                            <div class="architect__info general-R">клинкерная плитка,
-                                фиброцементный
-                                панели.</div>
+                            <div class="architect__info general-R">{{__('asd.клинкерная плитка, фиброцементный панели.')}}</div>
                             <!-- /.architect__info -->
                         </div>
                         <!-- /.architect__box -->
                         <div class="architect__box architect__box-2">
                             <div class="architect__btn">
-                                <p class="general-M">Стены</p>
+                                <p class="general-M">{{__('asd.Стены')}}</p>
                                 <!-- /.general-M -->
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -514,15 +507,13 @@
                                 </svg>
                             </div>
                             <!-- /.architect__btn -->
-                            <div class="architect__info general-R">клинкерная плитка,
-                                фиброцементный
-                                панели.</div>
+                            <div class="architect__info general-R">{{__('asd.клинкерная плитка, фиброцементный панели.')}}</div>
                             <!-- /.architect__info -->
                         </div>
                         <!-- /.architect__box -->
                         <div class="architect__box architect__box-3">
                             <div class="architect__btn">
-                                <p class="general-M">Корзины</p>
+                                <p class="general-M">{{__('asd.Корзины')}}</p>
                                 <!-- /.general-M -->
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -533,15 +524,13 @@
 
                             </div>
                             <!-- /.architect__btn -->
-                            <div class="architect__info general-R">клинкерная плитка,
-                                фиброцементный
-                                панели.</div>
+                            <div class="architect__info general-R">{{__('asd.клинкерная плитка, фиброцементный панели.')}}</div>
                             <!-- /.architect__info -->
                         </div>
                         <!-- /.architect__box -->
                         <div class="architect__box architect__box-4">
                             <div class="architect__btn">
-                                <p class="general-M">Каркас</p>
+                                <p class="general-M">{{__('asd.Каркас')}}</p>
                                 <!-- /.general-M -->
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -552,15 +541,13 @@
 
                             </div>
                             <!-- /.architect__btn -->
-                            <div class="architect__info general-R">клинкерная плитка,
-                                фиброцементный
-                                панели.</div>
+                            <div class="architect__info general-R">{{__('asd.клинкерная плитка, фиброцементный панели.')}}</div>
                             <!-- /.architect__info -->
                         </div>
                         <!-- /.architect__box -->
                         <div class="architect__box architect__box-5">
                             <div class="architect__btn">
-                                <p class="general-M">Фасад</p>
+                                <p class="general-M">{{__('asd.Фасад')}}</p>
                                 <!-- /.general-M -->
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -571,15 +558,13 @@
 
                             </div>
                             <!-- /.architect__btn -->
-                            <div class="architect__info general-R">клинкерная плитка,
-                                фиброцементный
-                                панели.</div>
+                            <div class="architect__info general-R">{{__('asd.клинкерная плитка, фиброцементный панели.')}}</div>
                             <!-- /.architect__info -->
                         </div>
                         <!-- /.architect__box -->
                         <div class="architect__box architect__box-6">
                             <div class="architect__btn">
-                                <p class="general-M">Лаймстоун</p>
+                                <p class="general-M">{{__('asd.Лаймстоун')}}</p>
                                 <!-- /.general-M -->
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -590,9 +575,7 @@
 
                             </div>
                             <!-- /.architect__btn -->
-                            <div class="architect__info general-R">клинкерная плитка,
-                                фиброцементный
-                                панели.</div>
+                            <div class="architect__info general-R">{{__('asd.клинкерная плитка, фиброцементный панели.')}}</div>
                             <!-- /.architect__info -->
                         </div>
                         <!-- /.architect__box -->
@@ -628,17 +611,16 @@
                     <div class="infrstr__content" data-aos-delay="500" data-aos="fade-left">
                         <div class="general__top">
                             <div class="top">
-                                <p class="general-R">Инфраструктура</p>
+                                <p class="general-R">{{__('asd.Инфраструктура')}}</p>
                                 <!-- /.general-R -->
-                                <h2 class="general-Db">Архитектура
-                                    и материалы</h2>
+                                <h2 class="general-Db">{{__('asd.Архитектура и материалы')}}</h2>
                                 <!-- /.general-Db -->
                             </div>
                             <!-- /.top -->
-                            <div class="description">Благодаря комбинированному фасаду из фиброцементных панелей, клинкера
+                            <div class="description">{{__('asd.Благодаря комбинированному фасаду из фиброцементных панелей, клинкера
                                 и натурального камня архитектурный облик комплекса никого не оставит равнодушным. Его
                                 отличительными характерными особенностями являются функционализм, лаконичность в деталях,
-                                приверженность принципу создания комфортной среды для человека и внимание к экологии.</div>
+                                приверженность принципу создания комфортной среды для человека и внимание к экологии.')}}</div>
                             <!-- /.description -->
                         </div>
                         <!-- /.general__top -->
@@ -685,15 +667,15 @@
                 <div class="yard">
                     <div class="general__top" data-aos-delay="200" data-aos="fade-right">
                         <div class="top">
-                            <p class="general-R">Инфраструктура</p>
+                            <p class="general-R">{{__('asd.Инфраструктура')}}</p>
                             <!-- /.general-R -->
                             <h2 class="general-Db">Двор</h2>
                             <!-- /.general-Db -->
                         </div>
                         <!-- /.top -->
-                        <div class="description">Одним из важных вопросов при выборе места для жизни являются
+                        <div class="description">{{__('asd.Одним из важных вопросов при выборе места для жизни являются
                             благоустройство двора и придомовой территории. Новый формат жилья и дворовой площади, где Вы и
-                            Ваши дети будут с радостью проводить время, не переживая за собственную безопасность.</div>
+                            Ваши дети будут с радостью проводить время, не переживая за собственную безопасность.')}}</div>
                         <!-- /.description -->
                     </div>
                     <!-- /.general__top -->
@@ -747,13 +729,13 @@
             <div class="general__container">
                 <div class="hall">
                     <div class="hall__content" data-aos-delay="200" data-aos="fade-right">
-                        <p class="general__subtitle general-R">Архитектура</p>
+                        <p class="general__subtitle general-R">{{__('asd.Архитектура')}}</p>
                         <!-- /.hall__subtitle -->
-                        <h2 class="general__title general-Db">Холлы</h2>
+                        <h2 class="general__title general-Db">{{__('asd.Холлы')}}</h2>
                         <!-- /.hall__title -->
-                        <div class="hall__description general-R">Уникальный дизайн просторных холлов выполнен в современном
+                        <div class="hall__description general-R">{{__('asd.Уникальный дизайн просторных холлов выполнен в современном
                             стиле с золотыми элементами. Именно в этом сочетании красоты и спокойствия Вы почувствуете себя
-                            в приятной обстановке.</div>
+                            в приятной обстановке.')}}</div>
                         <!-- /.hall__description -->
                         <div class="general__config">
                             <div class="config__number hall__number"></div>
@@ -813,13 +795,14 @@
             <div class="general__container">
                 <div class="feedback">
                     <div class="feedback__content" data-aos-delay="200" data-aos="fade-right">
-                        <h2 class="feedback__title general-Db">Получить консультацию</h2>
+                        <h2 class="feedback__title general-Db">{{__('asd.Получить консультацию')}}</h2>
                         <!-- /.feedback__title -->
                         <form action="" class="feedback__form">
-                            <input type="text" class="general-M" placeholder="Имя">
-                            <input id="feedback__tel" name="phone" type="tel" class="form__tel general-M" required
+                            <input type="text" id="first_name1" name="first_name" class="general-M" placeholder="Имя">
+                            <input id="feedback__tel" name="phone" type="tel" class="form__tel general-M phone1" required
                                 placeholder="+998" pattern="^[0-9-+\s()]*$">
-                            <button type="submit" class="feedback__btn general-Db">Оставить заявку</button>
+                            <input id="token" value="{{ csrf_token() }}" type="hidden">
+                            <button type="button" id="button" onclick="send1()" class="feedback__btn general-Db">{{__('asd.Оставить заявку')}}</button>
                         </form>
                     </div>
                     <!-- /.feedback__content -->
@@ -837,16 +820,16 @@
         <section class="section__commercial">
             <div class="general__container">
                 <div class="commercial">
-                    <p class="general__subtitle general-R" data-aos-delay="200" data-aos="fade-up">Инфраструктура</p>
+                    <p class="general__subtitle general-R" data-aos-delay="200" data-aos="fade-up">{{__('asd.Инфраструктура')}}</p>
                     <!-- /.contact__subtitle -->
-                    <h2 class="general__title general-Db" data-aos-delay="500" data-aos="fade-up">Коммерческие помещения
+                    <h2 class="general__title general-Db" data-aos-delay="500" data-aos="fade-up">{{__('asd.Коммерческие помещения')}}
                     </h2>
                     <!-- /.contact__title -->
-                    <div class="commercial__description general-R" data-aos-delay="600" data-aos="fade-up">Успех вашего
+                    <div class="commercial__description general-R" data-aos-delay="600" data-aos="fade-up">{{__('asd.Успех вашего
                         бизнеса зависит от различных составляющих: правильная локация, оптимальный клиентопоток, высокие
                         потолки в помещении и свободные планировки. Все это вкупе с приятным фасадом и архитектурой делают
                         коммерческие помещения в ЖК Business House весьма привлекательными как для инвесторов, так и для
-                        будущих клиентов.</div>
+                        будущих клиентов.')}}</div>
                     <!-- /.commercial__description -->
                 </div>
                 <!-- /.commercial -->
@@ -914,17 +897,16 @@
                     <div class="parking__content" data-aos-delay="500" data-aos="fade-left">
                         <div class="general__top">
                             <div class="top">
-                                <p class="general-R">Инфраструктура</p>
+                                <p class="general-R">{{__('asd.Инфраструктура')}}</p>
                                 <!-- /.general-R -->
-                                <h2 class="general-Db">Парковки
-                                    и кладовые</h2>
+                                <h2 class="general-Db">{{__('asd.Парковки и кладовые')}}</h2>
                                 <!-- /.general-Db -->
                             </div>
                             <!-- /.top -->
-                            <div class="description">Позаботьтесь заранее о безопасности и уходе своего автомобиля, а также
+                            <div class="description">{{__('asd.Позаботьтесь заранее о безопасности и уходе своего автомобиля, а также
                                 о хранении сезонных вещей. Для этого в нашем комплексе предусмотрены парковочные места и
                                 кладовые помещения. Это удобно и практично, ведь подобные приобретения - это настоящая
-                                забота не только о вещах, но и о себе любимых.</div>
+                                забота не только о вещах, но и о себе любимых.')}}</div>
                             <!-- /.description -->
                         </div>
                         <!-- /.general__top -->
@@ -965,42 +947,43 @@
             <!-- /.general__container -->
         </section>
         <!-- /.section__parking -->
-
+{{-- @dd($flats) --}}
         <section class="section__choice" id="appart">
             <div class="general__container">
                 <form class="choice">
                     <div class="choice__content" data-aos-delay="300" data-aos="fade-right">
-                        <p class="general__subtitle general-R">Подбор квартиры</p>
+                        <p class="general__subtitle general-R">{{__('asd.Подбор квартиры')}}</p>
                         <!-- /.contact__subtitle -->
-                        <h2 class="general__title general-Db">Выберите планировку</h2>
+                        <h2 class="general__title general-Db">{{__('asd.Выберите планировку')}}</h2>
                         <!-- /.contact__title -->
                         <div class="choice__filter">
                             <div class="choice__rooms">
-                                <p class="choice__name general-M">Комнатность</p>
+                                <p class="choice__name general-M">{{__('asd.Комнатность')}}</p>
                                 <!-- /.choice__name -->
                                 <div class="choice__buttons">
-                                    <?php for ($i = 1; $i <= 5; $i++):?>
-                                    <button type="button" class="choice__btn general-M"><?php echo $i; ?></button>
-                                    <?php endfor ?>
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <button type="button" class="choice__btn general-M @if($i == 1) active @endif" onclick="changeroom({{$i}})">{{$i}}</button>
+                                    @endfor
                                     {{-- active --}}
                                 </div>
                                 <!-- /.choice__buttons -->
                             </div>
                             <!-- /.choice__rooms -->
                             <div class="choice__flats">
-                                <p class="choice__name general-M">Доступные планировки</p>
+                                <p class="choice__name general-M">{{__('asd.Доступные планировки')}}</p>
                                 <!-- /.choice__rooms -->
                                 <div class="choice__container">
-                                    <?php for ($i = 1; $i <= 7; $i++):?>
-                                    <label for="fl-<?php echo $i; ?>" class="choice__flats-box"
-                                        data-room="<?php echo $i; ?>" data-section="<?php echo $i; ?>">
-                                        <input type="radio" id="fl-<?php echo $i; ?>" class="choice__input"
+                                    @foreach ($flats->where('room_count', 1) as $flat)
+                                    
+                                    <label for="fl-{{$flat->id}}" class="choice__flats-box"
+                                        data-room="{{$flat->id}}" data-section="{{$flat->id}}">
+                                        <input type="radio" id="fl-{{$flat->id}}" class="choice__input"
                                             name="choice-flat" checked>
-                                        <img src="/img/flat/1.png" alt="fl-<?php echo $i; ?>">
-                                        <span class="square general-M">41.71 м²</span>
+                                        <img src="{{$flat->photo}}" alt="fl-{{$flat->id}}">
+                                        <span class="square general-M">{{$flat->long_area}} м²</span>
                                         <!-- /.square -->
                                     </label>
-                                    <?php endfor ?>
+                                    @endforeach
                                 </div>
                                 <!-- /.choice__flats -->
                             </div>
@@ -1053,13 +1036,14 @@
             <div class="general__container">
                 <div class="feedback">
                     <div class="feedback__content" data-aos-delay="200" data-aos="fade-right">
-                        <h2 class="feedback__title general-Db">Получить консультацию</h2>
+                        <h2 class="feedback__title general-Db">{{__('asd.Получить консультацию')}}</h2>
                         <!-- /.feedback__title -->
                         <form action="" class="feedback__form">
-                            <input type="text" class="general-M" placeholder="Имя">
-                            <input id="feedback__tel" name="phone" type="tel" class="form__tel general-M" required
+                            <input type="text" id="first_name2" name="first_name2" class="general-M" placeholder="Имя" required>
+                            <input id="feedback__tel" name="phone2" type="tel" class="form__tel general-M phone2" required
                                 placeholder="+998" pattern="^[0-9-+\s()]*$">
-                            <button type="submit" class="feedback__btn general-Db">Оставить заявку</button>
+                            <input id="token" value="{{ csrf_token() }}" type="hidden">
+                            <button type="button" id="button" onclick="send2()" class="feedback__btn general-Db">{{__('asd.Оставить заявку')}}</button>
                         </form>
                     </div>
                     <!-- /.feedback__content -->
@@ -1078,9 +1062,9 @@
             <div class="general__container">
                 <div class="contact">
                     <div class="contact__content" data-aos-delay="300" data-aos="fade-right">
-                        <p class="general__subtitle general-R">Контакты</p>
+                        <p class="general__subtitle general-R">{{__('asd.Контакты')}}</p>
                         <!-- /.contact__subtitle -->
-                        <h2 class="general__title general-Db">Свяжитесь с нами</h2>
+                        <h2 class="general__title general-Db">{{__('asd.Свяжитесь с нами')}}</h2>
                         <!-- /.contact__title -->
                         <div class="contact__container">
 
@@ -1108,7 +1092,7 @@
                                 </div>
                                 <!-- /.box__ico -->
                                 <div class="box">
-                                    <a href="" class="box__content">г. Ташкент, Юнус-Абад 13, улица Ниязова 7</a>
+                                    <a href="" class="box__content">{{__('asd.г. Ташкент, Юнус-Абад 13, улица Ниязова 7')}}</a>
                                     <!-- /.box__content -->
                                 </div>
                                 <!-- /.box -->
@@ -1137,8 +1121,8 @@
                                 </div>
                                 <!-- /.box__ico -->
                                 <div class="box">
-                                    <span class="general-R">Телефон</span>
-                                    <a href="tel:" class="box__content">+99899 900 09 09</a>
+                                    <span class="general-R">{{__('asd.Телефон')}}</span>
+                                    <a href="tel:" class="box__content">{{__('asd.+99899 900 09 09')}}</a>
                                     <!-- /.box__content -->
                                 </div>
                                 <!-- /.box -->
@@ -1168,7 +1152,7 @@
                                 <!-- /.box__ico -->
                                 <div class="box">
                                     <span class="general-R">WhatsApp</span>
-                                    <a href="tel:" class="box__content">+99899 900 09 09</a>
+                                    <a href="tel:" class="box__content">{{__('asd.+99899 900 09 09')}}</a>
                                     <!-- /.box__content -->
                                 </div>
                                 <!-- /.box -->
@@ -1212,9 +1196,9 @@
 
                         </div>
                         <!-- /.contact__container -->
-                        <p class="contact__txt">Оставьте заявку, и наш менеджер перезвонит Вам.
+                        <p class="contact__txt">{{__('asd.Оставьте заявку, и наш менеджер перезвонит Вам.
                             Живую консультацию вы сможете получить в отделе продаж
-                            Business House.</p>
+                            Business House.')}}</p>
                         <!-- /.general__txt -->
                         <a href="" class="contact__feedback">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
@@ -1230,7 +1214,7 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-                            <span class="general-M"> Получить консультацию</span>
+                            <span class="general-M"> {{__('asd.Получить консультацию')}}</span>
                         </a>
                         <!-- /.contact__feedback -->
                     </div>
@@ -1250,6 +1234,11 @@
 @endsection
 
 @section('script')
+    <script>
+        function changeroom(count){
+            $(".choice__container").load('/flats/changeroom/'+count);
+        }
+    </script>
     <script src="/js/swiper.min.js"></script>
     <script src="/js/fancybox.umd.js"></script>
 
@@ -1449,5 +1438,39 @@
 
             console.log([prRoom, prSquare, prSection, prImg])
         });
+    </script>
+    <script>
+            function send1() {
+                let token = $("#token").val();
+                let first_name = $('#first_name1').val();
+                let phone = $('.phone1').val();        
+                $.ajax({
+                    token: token,
+                    type: "get",
+                    url: "/feedback/contacts",
+                    data: {
+                        first_name: first_name,
+                        phone: phone,
+                    },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+            });
+        }
+            function send2() {
+                let token = $("#token").val();
+                let first_name = $('#first_name2').val();
+                let phone = $('.phone2').val();        
+                $.ajax({
+                    token: token,
+                    type: "get",
+                    url: "/feedback/contacts",
+                    data: {
+                        first_name: first_name,
+                        phone: phone,
+                    },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                });
+            }
     </script>
 @endsection

@@ -1,16 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Dowload;
-use App\Models\Flat;
-use App\Models\Information;
-use App\Models\MainSlider;
-use App\Models\SecondSlider;
+use App\Models\Feedback;
 use Illuminate\Http\Request;
 
-class WelcomeController extends Controller
+class FeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,17 +15,9 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $mainsliders = MainSlider::all();
-        $secondslider = SecondSlider::all();
-        $flats = Flat::all();
-        $dowload = Dowload::find(1);
-        $information = Information::find(1);
-        return view('welcome', [
-            'mainsliders'=>$mainsliders,
-            'dowload'=>$dowload,
-            'secondslider'=>$secondslider,
-            'information'=>$information,
-            'flats'=>$flats,
+        $feedbacks = Feedback::all();
+        return view('dashboard.feedback.index', [
+            'feedbacks'=>$feedbacks
         ]);
     }
 
@@ -96,6 +84,7 @@ class WelcomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Feedback::find($id)->delete();
+        return back();
     }
 }

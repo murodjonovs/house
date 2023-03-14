@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 
@@ -11,11 +11,5 @@ use App\Traits\UpdateTrait;
 
 class BaseController extends Controller
 {
-    use StoreTrait, UpdateTrait, DestroyTrait;
-    use FileTrait;
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
 }

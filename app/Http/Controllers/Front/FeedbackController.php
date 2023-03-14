@@ -3,14 +3,10 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Dowload;
-use App\Models\Flat;
-use App\Models\Information;
-use App\Models\MainSlider;
-use App\Models\SecondSlider;
+use App\Models\Feedback;
 use Illuminate\Http\Request;
 
-class WelcomeController extends Controller
+class FeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,18 +15,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $mainsliders = MainSlider::all();
-        $secondslider = SecondSlider::all();
-        $flats = Flat::all();
-        $dowload = Dowload::find(1);
-        $information = Information::find(1);
-        return view('welcome', [
-            'mainsliders'=>$mainsliders,
-            'dowload'=>$dowload,
-            'secondslider'=>$secondslider,
-            'information'=>$information,
-            'flats'=>$flats,
-        ]);
+        //
     }
 
     /**
@@ -51,7 +36,9 @@ class WelcomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        Feedback::create($request->all());
+        return back();
     }
 
     /**

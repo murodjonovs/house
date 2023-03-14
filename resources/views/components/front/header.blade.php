@@ -30,7 +30,7 @@
                         <path d="M14 10C15.1046 10 16 9.10457 16 8C16 6.89543 15.1046 6 14 6C12.8954 6 12 6.89543 12 8C12 9.10457 12.8954 10 14 10Z" fill="var(--main-color-one)"/>
                         <path d="M14 16C15.1046 16 16 15.1046 16 14C16 12.8954 15.1046 12 14 12C12.8954 12 12 12.8954 12 14C12 15.1046 12.8954 16 14 16Z" fill="var(--main-color-one)"/>
                     </svg>
-                    <span class="general-M">3334</span>
+                    <span class="general-M">{{__('asd.3334')}}</span>
                 </a>
                 <!-- /.call -->
                 <a href="" class="header__whatsapp">
@@ -60,24 +60,41 @@
                             </clipPath>
                         </defs>
                     </svg>
-                    <span class="general-M">Консультация</span>
+                    <span class="general-M">{{__('asd.Консультация')}}</span>
                 </a>
                 <!-- /.calling__feedback -->
                 <div class="header__btns">
                     <div class="languages">
                         <div class="languages__btn">
-                            <img src="/img/icons/ru.svg" alt="ru">
+                            @if ($lang == 'ru')
+                                <img src="/img/icons/ru.svg" alt="ru">
+                            @endif
+                            @if ($lang == 'uz')
+                                <img src="/img/icons/uzb.svg" alt="uz">
+                            @endif
+                            @if ($lang == 'kr')
+                                <img src="/img/icons/krg.svg" alt="kr">
+                            @endif
                         </div>
                         <!-- /.languages__btn -->
                         <div class="languages__list">
                             <div class="languages__container">
-                                <a href="" class="languages__btn">
+                                @if($lang != 'uz')
+                                <a href="/languages/uz" class="languages__btn">
                                     <img src="/img/icons/uzb.svg" alt="uz">
                                 </a>
+                                @endif
                                 <!-- /.languages__btn -->
-                                <a href="" class="languages__btn">
+                                @if($lang != 'kr')
+                                <a href="/languages/kr" class="languages__btn">
                                     <img src="/img/icons/krg.svg" alt="krg">
                                 </a>
+                                @endif
+                                @if($lang != 'ru')
+                                <a href="/languages/ru" class="languages__btn">
+                                    <img src="/img/icons/ru.svg" alt="krg">
+                                </a>
+                                @endif
                                 <!-- /.languages__btn -->
                             </div>
                             <!-- /.languages__container -->
@@ -108,14 +125,14 @@
     <div class="general__container">
         <div class="menu__container">
             <div class="menu__dropdown">
-                <div class="menu__name general-M">МЕНЮ</div>
+                <div class="menu__name general-M">{{__('asd.МЕНЮ')}}</div>
                 <ul class="menu__list">
-                    <li><a class="general-Db" href="#showcase">Главная</a></li>
-                    <li><a class="general-Db" href="#arhitector">Инфраструктура</a></li>
-                    <li><a class="general-Db" href="#about">О проекте</a></li>
-                    <li><a class="general-Db" href="#appart">Выбрать квартиру</a></li>
-                    <li><a class="general-Db" href="#comerc">Застройщик</a></li>
-                    <li><a class="general-Db" href="#contacts">Контакты</a></li>
+                    <li><a class="general-Db" href="#showcase">{{__('asd.Главная')}}</a></li>
+                    <li><a class="general-Db" href="#arhitector">{{__('asd.Инфраструктура')}}</a></li>
+                    <li><a class="general-Db" href="#about">{{__('asd.О проекте')}}</a></li>
+                    <li><a class="general-Db" href="#appart">{{__('asd.Выбрать квартиру')}}</a></li>
+                    <li><a class="general-Db" href="#comerc">{{__('asd.Застройщик')}}</a></li>
+                    <li><a class="general-Db" href="#contacts">{{__('asd.Контакты')}}</a></li>
                 </ul>
             </div>
             <div class="menu__bottom">
@@ -146,10 +163,10 @@
                         <path d="M14 10C15.1046 10 16 9.10457 16 8C16 6.89543 15.1046 6 14 6C12.8954 6 12 6.89543 12 8C12 9.10457 12.8954 10 14 10Z" fill="var(--main-color-one)"/>
                         <path d="M14 16C15.1046 16 16 15.1046 16 14C16 12.8954 15.1046 12 14 12C12.8954 12 12 12.8954 12 14C12 15.1046 12.8954 16 14 16Z" fill="var(--main-color-one)"/>
                     </svg>
-                    <span class="general-M">3334</span>
+                    <span class="general-M">{{__('asd.3334')}}</span>
                 </a>
                 <!-- /.call -->
-                <p class="menu__txt general-M">Политика конфиденциальности</p>
+                <p class="menu__txt general-M">{{__('asd.Политика конфиденциальности')}}</p>
                 <!-- /.menu__txt -->
             </div>
             <!-- /.menu__bottom -->

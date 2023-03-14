@@ -57,6 +57,18 @@
                         <span>Информация</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('dashboard.feedback.index') }}">
+                        <i class="uil-star"></i>
+                        <span>Обратная связь</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('dashboard.world.index') }}">
+                        <i class="uil-star"></i>
+                        <span>Словарь</span>
+                    </a>
+                </li>
                 
             </ul>
         </div>

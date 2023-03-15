@@ -424,7 +424,7 @@
             <!-- /.general__container -->
         </section>
         <!-- /.section__about -->
-
+        {{-- @dd($project) --}}
         <section class="section__location">
             <div class="general__container">
                 <p class="general__subtitle general-R" data-aos-delay="200" data-aos="fade-right">{{__('asd.Расположение')}}</p>
@@ -440,13 +440,16 @@
                 <!-- /.location__buttons -->
                 <div class="genplan" data-aos-delay="200" data-aos="fade-up">
                     <div class="genplan__main genplan__main-floor">
-                        <img src="/img/genplan/genplan.jpg" alt="House">
-                        <svg viewBox="0 0 1920 969" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                            <a href="" id="genplan__path-1">
-                                <path onmouseleave="mouseLeave()" onmouseenter="mouseEnter(1, '9', '4')" opacity="0.5"
-                                    d="M729 279.5V253.5L805.5 236.5L814.5 249L914.5 234V225L1077 199.5L1115.5 249L1203 236.5L1241 297V368.5L1203 321L1115.5 329.5L1077 288.5L717.5 341.5V318L702.5 307.5V283.5L729 279.5Z"
-                                    fill="var(--main-color-one)" />
-                            </a>
+                        <img src="{{$project->photo}}" alt="House">
+                        <svg viewBox="{{$project->view_box}}" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            @foreach ($project->buildings as $building)
+                        
+                                <a href="{{route('buildings.show', $building)}}" id="genplan__path-1">
+                                    <path onmouseleave="mouseLeave()" onmouseenter="mouseEnter(1, '9', '4')" opacity="0.5"
+                                        d="{{$building->d}}"
+                                        fill="var(--main-color-one)" />
+                                </a>
+                            @endforeach
                         </svg>
                     </div>
                     <a href="{{ route('projects.index') }}" class="genplan__link general-Db">{{__('asd.Выбрать планировку')}}</a>

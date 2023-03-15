@@ -6,66 +6,31 @@
 
 @section('content')
     <div class="wrapper">
-        <section class="section__planing" style="display: block">
-            <div class="general__container">
-                <div class="planing">
-                    <a href="" class="planing__back">
-                        <svg width="24" height="24" viewBox="{{ $building->view_box }}" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            @foreach($building->floors as $floor)
-                                <path d="{{ $floor->d }}" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            @endforeach
-                        </svg>
-                    </a>
-                    <!-- /.planing__back -->
-                    <div class="planing__flats">
-                        @foreach($building->floors as $floor)
-                            <a href="" class="planing__flat general-M">{{ $floor->id }}</a>
-                        @endforeach
-                        <!-- /.planing__flat -->
-                    </div>
-                    <!-- /.planing__flats -->
-                    <div class="planing__container">
-                        <div class="planing__house">
-                            <img src="{{ $building->photo }}" alt="House">
-                            <svg width="522" height="498" viewBox="{{ $building->view_box }}" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                @foreach ($building->floors as $floor)
-                                    <a href="" id="flat__path-1"
-                                        data-flat="/img/flat/1.png"
-                                        data-flat-name="2х комнатная"
-                                        data-flat-subtitle="Вторая фаза, 07 дом, 9 этаж">
-                                        <path
-                                            onmouseleave="mouseLeavePlaning()"
-                                            onmouseenter="mouseEnterPlaning(1, '49', '4', '48')"
-                                            opacity="0.5" d="{{ $floor->d }}" fill="#0FA85F"/>
-                                    </a>
-                                @endforeach
-                            </svg>
-                        </div>
-                        <!-- /.planing__house -->
-                        <div class="planing__box">
-                            <p class="planing__box-info general-M">
-                                <span id="planing__floor" class="general-Db"></span>
-                                квартира
-                            </p>
-                            <p class="planing__box-info general-M">
-                                <span id="planing__room" class="general-Db"></span>
-                                комнат
-                            </p>
-                            <p class="planing__box-info general-M">
-                                <span id="planing__square" class="general-Db"></span>
-                                площадь
-                            </p>
-                        </div>
-                        <!-- /.planing__box -->
-                    </div>
-                    <!-- /.planing__container -->
-                </div>
-                <!-- /.planing -->
+        <section class="section__house">
+            <a href="/" class="house__back">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 8L10 12L14 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="general-M">Назад</span>
+            </a>
+            <!-- /.house__back -->
+            <div class="house__main house__main-floor">
+                <img src="{{ $building->photo }}" alt="House">
+                <svg viewBox="{{ $building->view_box }}" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    @foreach ($building->floors as $floor)
+                        <a href="{{ route('floors.show', $floor) }}" id="house__path-1">
+                            <path onmouseleave="mouseLeave()" onmouseenter="mouseEnter(1, '9', '4')" opacity="0.5" d="{{ $floor->d }}" fill="var(--main-color-one)"/>
+                        </a>
+                    @endforeach
+                </svg>
             </div>
-            <!-- /.general__container -->
+
+
+            <div class="house__popup" style="">
+                <p class="house__popup-floor general-Db"><span id="floor"></span> Этаж</p>
+                <p class="house__popup-flat general-M"><span id="flat"></span> квартир</p>
+            </div>
         </section>
-        <!-- /.section__planing -->
-        <!-- /.popup__plan -->
     </div>
     <!-- /.wrapper -->
 @endsection

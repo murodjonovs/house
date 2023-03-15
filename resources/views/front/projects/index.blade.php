@@ -18,7 +18,7 @@
                 <img src="{{ $project->photo }}" alt="House">
                 <svg viewBox="{{ $project->view_box }}" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                     @foreach ($project->buildings as $building)
-                        <a href="{{ route('buildings.index', $building) }}" id="house__path-1">
+                        <a href="{{ route('buildings.show', $building) }}" id="house__path-1">
                             <path onmouseleave="mouseLeave()" onmouseenter="mouseEnter(1, '9', '4')" opacity="0.5" d="{{ $building->d }}" fill="var(--main-color-one)"/>
                         </a>
                     @endforeach
@@ -27,8 +27,8 @@
 
 
             <div class="house__popup" style="">
-                <p class="house__popup-floor general-Db"><span id="floor"></span> Этаж</p>
-                <p class="house__popup-flat general-M"><span id="flat"></span> квартир</p>
+                <p class="house__popup-floor general-Db"><span id="floor"></span> {{__('asd.Этаж')}}</p>
+                <p class="house__popup-flat general-M"><span id="flat"></span> {{__('asd.квартир')}}</p>
             </div>
         </section>
     </div>

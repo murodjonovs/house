@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Building;
 use App\Models\Dowload;
 use App\Models\Flat;
 use App\Models\Information;
 use App\Models\MainSlider;
+use App\Models\Project;
 use App\Models\SecondSlider;
 use Illuminate\Http\Request;
 
@@ -20,6 +22,7 @@ class WelcomeController extends Controller
     public function index()
     {
         $mainsliders = MainSlider::all();
+        $project = Project::with('buildings')->find(1);
         $secondslider = SecondSlider::all();
         $flats = Flat::all();
         $dowload = Dowload::find(1);
@@ -30,6 +33,7 @@ class WelcomeController extends Controller
             'secondslider'=>$secondslider,
             'information'=>$information,
             'flats'=>$flats,
+            'project'=>$project,
         ]);
     }
 

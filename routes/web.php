@@ -70,7 +70,8 @@ Route::prefix('dashboard')->group(function(){
 });
 
 Route::get('/projects', [App\Http\Controllers\Front\ProjectController::class, 'index'])->name('projects.index');
-Route::get('/buildings/{id}', [App\Http\Controllers\Front\BuildingController::class, 'index'])->name('buildings.index');
+Route::get('/buildings/{id}', [App\Http\Controllers\Front\BuildingController::class, 'show'])->name('buildings.show');
+Route::get('/floors/{id}', [App\Http\Controllers\Front\FloorController::class, 'show'])->name('floors.show');
 
 Route::view('/genplan-single', 'front.genplan.data-single');
 

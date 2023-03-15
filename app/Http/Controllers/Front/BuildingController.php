@@ -11,9 +11,9 @@ use Illuminate\Http\Request;
 class BuildingController extends BaseController
 {
 
-    public function index($project_id)
+    public function show($building_id)
     {
-        $building = Building::with('floors')->find($project_id);
+        $building = Building::with('floors')->find($building_id);
         return view('front.buildings.index', compact('building'));
     }
 
